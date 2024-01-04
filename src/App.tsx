@@ -1,10 +1,14 @@
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { Main } from "./shared/ui/index";
+import "./App.css";
 
 function App() {
   return (
-    <div className="text-center">
-      Hi mom
-    </div>
+    <Routes>
+      <Route path="/" element={<Main />}>
+        
+      </Route>
+    </Routes>
   );
 }
 
