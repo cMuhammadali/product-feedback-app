@@ -1,10 +1,12 @@
-import { Home } from "../home/Home";
+import { Outlet } from "react-router-dom";
 import React from "react";
 
 export const Main: React.FC = () => {
   return (
     <div>
-      <Home />
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 };

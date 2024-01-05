@@ -4,6 +4,7 @@ import UpIcon from "../../images/UpIcon.png";
 import React, { useState } from "react";
 import { NavbarFilter } from "../index";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
   const [isOpenFilter, setIsOpenFilter] = useState(false);
@@ -33,9 +34,11 @@ export const Navbar: React.FC = () => {
       </div>
 
       <div className="items-center">
-        <button className="text-white add-feedback py-4 px-6 rounded-xl">
-          + Add Feedback
-        </button>
+        <Link to={"/add-feedback"}>
+          <button className="text-white add-feedback py-4 px-6 rounded-xl">
+            + Add Feedback
+          </button>
+        </Link>
       </div>
     </div>
   );

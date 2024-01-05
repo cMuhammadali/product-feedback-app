@@ -1,4 +1,4 @@
-import { Leftbar, Navbar } from "../index";
+import { Leftbar, List, Navbar } from "../index";
 import React from "react";
 
 export const Home: React.FC = () => {
@@ -10,6 +10,8 @@ export const Home: React.FC = () => {
 
       <div className="w-4/5 pt-2 px-8">
         <Navbar />
+
+        <List />
       </div>
     </div>
   );
