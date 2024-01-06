@@ -28,7 +28,6 @@ export const AddFeedback: React.FC = () => {
   const onSubmit = async (data: addProdutForm) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     createPost(data as IPost);
-    console.log("data =>", data);
     reset();
     navigate(-1);
   };
@@ -48,10 +47,11 @@ export const AddFeedback: React.FC = () => {
         <div className="absolute top-14 rounded-full pb-4 px-6 pt-3">
             
         </div>
-        <div className="absolute top-14 rounded-full text-white pb-4 px-6 pt-3 circle-add-product">
-          <span className="text-4xl">+</span>
+        <div className="absolute top-14 rounded-full w-1/4">
+          <img src={CircleAdd} alt="Circle" className="circle-add-feedback absolute" />
+          <img src={AddPlus} alt="Add plus" className="add-plus-add-feedback absolute top-5 left-5" />
         </div>
-        <div className="w-4/12 bg-white add-feedback-card shadow-2xl rounded-xl px-6 py-4">
+        <div className="w-4/12 bg-white add-feedback-card rounded-xl px-6 py-4">
           <h1 className="text-titleColor text-2xl mt-8">Create New Feedback</h1>
           <form className="mt-6" onSubmit={handleSubmit(onSubmit)}>
             <Form>

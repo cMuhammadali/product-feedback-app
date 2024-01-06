@@ -25,5 +25,10 @@ export const PostService = createApi({
       }),
       invalidatesTags: ["Post"],
     }),
+    oneFeedback: build.query<IPost, number>({
+      query: (id: number) => ({
+        url: `/feedbacks/${id}`,
+      }),
+    }),
   }),
 });
