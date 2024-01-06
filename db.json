@@ -1,0 +1,229 @@
+{
+  "feedbacks": [
+    {
+      "id": 1,
+      "title": "Add tags for solutions",
+      "description": "Easier to search for solutions based on a specific stack.",
+      "type": "Enhancement",
+      "commentsCount": 2,
+      "likes": 112,
+      "status": "planned",
+      "isLiked": false,
+      "comments": [
+        {
+          "id": 1,
+          "title": "Also, please allow styles to be applied based on system preferences. I would love to be able to browse Frontend Mentor in the evening after my device’s dark mode turns on without the bright background it currently has."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Add a dark theme option",
+      "description": "It would help people with light sensitivities and who prefer dark mode.",
+      "type": "Feature",
+      "commentsCount": 4,
+      "likes": 99,
+      "status": "planned",
+      "isLiked": true,
+      "comments": [
+        {
+          "title": "blalvl"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Q&A within the challenge hubs",
+      "description": "Challenge-specific Q&A would make for easy reference.",
+      "type": "Feature",
+      "commentsCount": 1,
+      "likes": 65,
+      "status": "planned",
+      "isLiked": true,
+      "comments": [
+        {
+          "id": 2,
+          "title": "Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Allow image/video upload ",
+      "description": "Images and screencasts can enhance comments on solutions.",
+      "type": "Enhancement",
+      "commentsCount": 2,
+      "likes": 51,
+      "status": "planned",
+      "isLiked": false,
+      "comments": []
+    },
+    {
+      "id": 5,
+      "title": "Ability to follow others",
+      "description": "Stay updated on comments and solutions other people post.",
+      "type": "Feature",
+      "commentsCount": 3,
+      "likes": 42,
+      "status": "planned",
+      "isLiked": false,
+      "comments": []
+    },
+    {
+      "id": 6,
+      "title": "Preview images not loading",
+      "description": "Challenge preview images are missing when you apply a filter.",
+      "type": "Bug",
+      "commentsCount": 0,
+      "likes": 3,
+      "status": "planned",
+      "isLiked": false,
+      "comments": []
+    },
+    {
+      "title": "Test 1",
+      "type": "Enhancement",
+      "description": "Test uchun bu",
+      "id": 7
+    }
+  ],
+  "cats": [
+    {
+      "id": 1,
+      "title": "Golden chinchilla",
+      "img": "https://www.hepper.com/wp-content/uploads/2021/10/longhair-cat-golden-blue-chinchilla-with-green-eyes3_OksanaSusoeva_shutterstock.jpg",
+      "price": 1000,
+      "birthDate": "2022-01-12",
+      "weight": 3,
+      "benefits": "Beautiful;Tame;Latokka o'rgangan"
+    },
+    {
+      "id": 2,
+      "title": "Qizil Ara",
+      "img": "https://mybritishshorthair.com/wp-content/uploads/2020/04/Grey_British_Shorthair_with_yellow_eyes-1024x861.jpg",
+      "price": 1200,
+      "birthDate": "2022-02-09",
+      "weight": 4,
+      "benefits": ""
+    }
+  ],
+  "students": [
+    {
+      "id": 100,
+      "name": "Ibrohimjon",
+      "lastName": "Alimuhammedov",
+      "mark": 140.5,
+      "markedDate": "2021-12-05"
+    },
+    {
+      "id": 101,
+      "name": "Asadbek",
+      "lastName": "",
+      "mark": 146,
+      "markedDate": "2021-12-06"
+    },
+    {
+      "id": 102,
+      "name": "Ahmadjon",
+      "lastName": "Hasanjanov",
+      "mark": 75,
+      "markedDate": "2021-12-01"
+    },
+    {
+      "id": 103,
+      "name": "G'anivoy",
+      "lastName": "Teshayev",
+      "mark": 40,
+      "markedDate": "2021-12-05"
+    },
+    {
+      "id": 104,
+      "name": "Kamronbek",
+      "lastName": "Zoirov",
+      "mark": 150,
+      "markedDate": "2022-03-29"
+    }
+  ],
+  "parrots": [
+    {
+      "id": 1,
+      "title": "Hyacinth macaw",
+      "img": "https://media.istockphoto.com/photos/parrot-hyacinth-macaw-picture-id1359443019?b=1&k=20&m=1359443019&s=170667a&w=0&h=dteRZ9bM7sEvBbFE9it1r9O7IxlILXb1UnSoLNEVMAg=",
+      "price": 5000,
+      "birthDate": "2022-01-12",
+      "sizes": {
+        "width": 184,
+        "height": 50
+      },
+      "isFavorite": false,
+      "features": "Beautiful,Tame,Can speak"
+    },
+    {
+      "id": 2,
+      "title": "Qizil Ara",
+      "img": "https://media.istockphoto.com/photos/amazon-rainforest-parrot-macaw-picture-id1197182594?b=1&k=20&m=1197182594&s=170667a&w=0&h=bBQfSDgofCr_w2DBf79cwQe-JA45i02vCv7Ttx5qcmU=",
+      "price": 1200,
+      "birthDate": "2022-02-09",
+      "sizes": {
+        "width": 235,
+        "height": 100
+      },
+      "isFavorite": false,
+      "features": ""
+    },
+    {
+      "id": 3,
+      "title": "Sariq tojli oq Kakatu",
+      "img": "https://media.istockphoto.com/photos/sulphur-crested-cockatoo-picture-id1322969996?k=20&m=1322969996&s=612x612&w=0&h=jceOFxtD6QmLKqKxUxdGFTVc7bATCCVcwpwUSCca0aE=",
+      "price": 1500,
+      "birthDate": "2022-02-20",
+      "sizes": {
+        "width": 138,
+        "height": 84
+      },
+      "isFavorite": false,
+      "features": ""
+    }
+  ],
+  "products": [
+    {
+      "id": 123,
+      "title": "Redmi Note 10 Pro",
+      "img": "https://picsum.photos/300/200",
+      "price": 4300000,
+      "model": "Xiaomi",
+      "addedDate": "2021-11-12",
+      "benefits": [
+        "8gb",
+        "128gb",
+        "Waterproof"
+      ]
+    },
+    {
+      "id": 124,
+      "title": "Samgung Note 20 Ultra",
+      "img": "https://picsum.photos/300/200",
+      "price": 8300000,
+      "model": "Samsung",
+      "addedDate": "2021-10-12",
+      "benefits": [
+        "32gb",
+        "1tb"
+      ]
+    }
+  ],
+  "manufacturers": [
+    {
+      "id": 1,
+      "name": "Xiaomi"
+    },
+    {
+      "id": 2,
+      "name": "Apple"
+    },
+    {
+      "id": 3,
+      "name": "Samsung"
+    }
+  ]
+}
