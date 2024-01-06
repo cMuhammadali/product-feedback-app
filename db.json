@@ -81,10 +81,15 @@
       "comments": []
     },
     {
-      "title": "Test 1",
-      "type": "Enhancement",
-      "description": "Test uchun bu",
-      "id": 7
+      "id": 7,
+      "commentsCount": 0,
+      "likes": 0,
+      "status": "planned",
+      "isLiked": false,
+      "comments": [],
+      "title": "TEST 1",
+      "type": "Bug",
+      "description": "BUG BU"
     }
   ],
   "cats": [

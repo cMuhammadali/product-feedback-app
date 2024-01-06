@@ -1,4 +1,5 @@
 export { NavbarFilter } from './navbarFilter/NavbarFilter';
+export { EditFeedback } from './editFeedback/EditFeedback';
 export { OneFeedback } from './oneFeedback/OneFeedback';
 export { AddFeedback } from './addFeedback/AddFeedback';
 export { Leftbar } from './leftbar/LeftBar'; 

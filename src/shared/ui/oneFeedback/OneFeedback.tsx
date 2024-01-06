@@ -1,5 +1,5 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
 import ListUpIconWhite from "../../images/ListUpIconWhite.png";
+import { useNavigate, useParams } from "react-router-dom";
 import { PostService } from "../../services/PostService";
 import ListUpIon from "../../images/ListUpIcon.png";
 import CommentIcon from "../../images/Comment.png";
@@ -40,11 +40,12 @@ export const OneFeedback: React.FC = () => {
             <p className="go-back-text ml-2">Go Back</p>
           </div>
 
-          <Link to={`/edit-feedback/${id}`}>
-            <Button className="px-5 py-3 one-feedback-edit-button text-white rounded-xl">
-              Edit Feedback
-            </Button>
-          </Link>
+          <Button
+            className="px-5 py-3 one-feedback-edit-button text-white rounded-xl"
+            onClick={() => navigate(`/edit-feedback/${id}`)}
+          >
+            Edit Feedback
+          </Button>
         </div>
 
         <div className="mt-4" key={feedback?.id}>
@@ -99,13 +100,12 @@ export const OneFeedback: React.FC = () => {
         <div className="mt-4 bg-white p-6 rounded-xl">
           <div>
             <h1 className="text-xl list-title-text font-bold mb-4">
-              {feedback?.comments.length} Comments
+              {feedback?.comments?.length ? feedback?.comments.length : 0} Comments
             </h1>
           </div>
 
           <div className="mt-4">
-            {feedback?.comments.map((item: Comment) => {
-              console.log("item", item);
+            {feedback?.comments?.map((item: Comment) => {
               return (
                 <div key={item.id}>
                   <h1>{item.title}</h1>

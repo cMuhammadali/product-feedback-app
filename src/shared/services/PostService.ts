@@ -6,7 +6,7 @@ export const PostService = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3002",
   }),
-  tagTypes: ["Post"],
+  tagTypes: ["feedbacks"],
   endpoints: (build) => ({
     fetchAllPosts: build.query<IPost[], number>({
       query: (limit: number = 100) => ({
@@ -15,7 +15,7 @@ export const PostService = createApi({
           _limit: limit,
         },
       }),
-      providesTags: () => ["Post"],
+      providesTags: () => ["feedbacks"],
     }),
     createPost: build.mutation<IPost, IPost>({
       query: (post) => ({
@@ -23,12 +23,23 @@ export const PostService = createApi({
         method: "POST",
         body: post,
       }),
-      invalidatesTags: ["Post"],
+      invalidatesTags: ["feedbacks"],
     }),
     oneFeedback: build.query<IPost, number>({
       query: (id: number) => ({
         url: `/feedbacks/${id}`,
       }),
+    }),
+    editFeedbackPost: build.mutation<
+      IPost,
+      { id?: number | string; feedback: IPost }
+    >({
+      query: ({ id, feedback }) => ({
+        url: `/feedbacks/${id}`,
+        method: "PATCH",
+        body: feedback,
+      }),
+      invalidatesTags: ["feedbacks"],
     }),
   }),
 });

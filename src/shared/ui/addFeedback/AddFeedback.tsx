@@ -26,8 +26,18 @@ export const AddFeedback: React.FC = () => {
   });
 
   const onSubmit = async (data: addProdutForm) => {
+    const defaultFeedbackData: IPost = {
+      id: 0,
+      commentsCount: 0,
+      likes: 0,
+      status: "planned",
+      isLiked: false,
+      comments: [],
+      ...data,
+    };
+
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    createPost(data as IPost);
+    createPost(defaultFeedbackData as IPost);
     reset();
     navigate(-1);
   };
