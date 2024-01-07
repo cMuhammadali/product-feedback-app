@@ -1,7 +1,7 @@
 .leftbar-radial {
   background: radial-gradient(
     farthest-corner at 20px 130px,
-    #28A7ED 20%,
+    #28a7ed 20%,
     #e84d70 100%
   );
 }
@@ -13,14 +13,26 @@
 
 .bg-leftbar-buttons:hover {
   background: #4661e6;
+  color: #fff;
   transition: all 0.5s;
+}
+.bg-leftbar-buttons:active {
+  background: #4661e6;
   color: #fff;
 }
-
+.bg-leftbar-buttons.btns.active {
+  background: #4661e6;
+  color: #fff;
+  border-right: 2px solid #fff;
+}
 .text-leftbar-color {
   color: #4661e6;
 }
-
+.bg-leftbar-buttons-active{
+  background: #4661e6;
+  color: #fff;
+  transition: all 0.5s;
+}
 .bg-leftbar {
   background-color: #f49f85;
 }

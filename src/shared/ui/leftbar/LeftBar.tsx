@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Leftbar.css";
 
-export const Leftbar: React.FC = () => {
+interface LeftbarProps {
+  handleFilter: (type: string) => void;
+}
+
+export const Leftbar: React.FC<LeftbarProps> = ({ handleFilter }) => {
+  const [activeButton, setActiveButton] = useState("All");
+
+  const handleClick = (type: string) => {
+    if (type === "All") {
+      setActiveButton("All");
+      handleFilter("All");
+    }
+    if (type === "UI") {
+      setActiveButton("UI");
+      handleFilter("UI");
+    }
+    if (type === "UX") {
+      setActiveButton("UX");
+      handleFilter("UX");
+    }
+    if (type === "Enhancement") {
+      setActiveButton("Enhancement");
+      handleFilter("Enhancement");
+    }
+    if (type === "Bug") {
+      setActiveButton("Bug");
+      handleFilter("Bug");
+    }
+    if (type === "Feature") {
+      setActiveButton("Feature");
+      handleFilter("Feature");
+    }
+  };
+
   return (
     <div className="h-screen p-2">
       <div className="w-full leftbar-radial p-4 rounded-xl pt-20 pb-8">
@@ -10,20 +43,64 @@ export const Leftbar: React.FC = () => {
       </div>
 
       <div className="w-full bg-white p-4 rounded-xl mt-8">
-        <button className="px-4 py-2 rounded-xl bg-leftbar-buttons">All</button>
-        <button className="px-4 py-2 rounded-xl bg-leftbar-buttons ml-4">
+        <button
+          className={
+            activeButton === "All"
+              ? "px-4 py-2 rounded-xl bg-leftbar-buttons-active"
+              : "px-4 py-2 rounded-xl bg-leftbar-buttons"
+          }
+          onClick={() => handleClick("All")}
+        >
+          All
+        </button>
+        <button
+          className={
+            activeButton === "UI"
+              ? "px-4 py-2 rounded-xl bg-leftbar-buttons-active ml-4"
+              : "px-4 py-2 rounded-xl bg-leftbar-buttons ml-4"
+          }
+          onClick={() => handleClick("UI")}
+        >
           UI
         </button>
-        <button className="px-4 py-2 rounded-xl bg-leftbar-buttons ml-4">
+        <button
+          className={
+            activeButton === "UX"
+              ? "px-4 py-2 rounded-xl bg-leftbar-buttons-active ml-4"
+              : "px-4 py-2 rounded-xl bg-leftbar-buttons ml-4"
+          }
+          onClick={() => handleClick("UX")}
+        >
           UX
         </button>
-        <button className="px-4 py-2 rounded-xl bg-leftbar-buttons mt-4">
+        <button
+          className={
+            activeButton === "Enhancement"
+              ? "px-4 py-2 rounded-xl bg-leftbar-buttons-active mt-4"
+              : "px-4 py-2 rounded-xl bg-leftbar-buttons mt-4"
+          }
+          onClick={() => handleClick("Enhancement")}
+        >
           Enhancement
         </button>
-        <button className="px-4 py-2 rounded-xl bg-leftbar-buttons ml-4 mt-4">
+        <button
+          className={
+            activeButton === "Bug"
+              ? "px-4 py-2 rounded-xl bg-leftbar-buttons-active ml-4 mt-4"
+              : "px-4 py-2 rounded-xl bg-leftbar-buttons ml-4 mt-4"
+          }
+          onClick={() => handleClick("Bug")}
+        >
           Bug
         </button>
-        <button className="px-4 py-2 rounded-xl bg-leftbar-buttons mt-4">
+        <button
+          className={
+            activeButton === "Feature"
+              ? "px-4 py-2 rounded-xl bg-leftbar-buttons-active mt-4"
+              : "px-4 py-2 rounded-xl bg-leftbar-buttons mt-4"
+          }
+          onClick={() => handleClick("Feature")}
+        >
           Feature
         </button>
       </div>
