@@ -4,6 +4,7 @@ import CommentIcon from "../../images/Comment.png";
 import { IPost } from "../../modules/IPost";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { NotFound } from "../index";
 import "./List.css";
 
 type ListProps = {
@@ -83,8 +84,9 @@ export const List: React.FC<ListProps> = ({ isLoading, filterResult }) => {
           );
         })
       ) : (
-        <h1 className="text-xl text-center mt-4">Feedback not found</h1>
+        <NotFound />
       )}
     </div>
   );
 };
+

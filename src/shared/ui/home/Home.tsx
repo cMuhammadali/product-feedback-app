@@ -59,8 +59,6 @@ export const Home: React.FC = () => {
     }
   };
 
-  console.log("filterResult", filterResult);
-
   return (
     <div className="flex justify-between h-screen w-full">
       <div className="leftbar w-1/5">

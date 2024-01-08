@@ -2,6 +2,7 @@ export { NavbarFilter } from './navbarFilter/NavbarFilter';
 export { EditFeedback } from './editFeedback/EditFeedback';
 export { OneFeedback } from './oneFeedback/OneFeedback';
 export { AddFeedback } from './addFeedback/AddFeedback';
+export { NotFound } from './notFound/NotFound';
 export { Leftbar } from './leftbar/LeftBar'; 
 export { Navbar } from './navbar/Navbar'; 
 export { Button } from './button/Button';
