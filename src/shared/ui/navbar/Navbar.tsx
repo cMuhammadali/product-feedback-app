@@ -1,12 +1,19 @@
 import DownIcon from "../../images/DownIcon.png";
 import VectorImg from "../../images/Vector.png";
 import UpIcon from "../../images/UpIcon.png";
+import { IPost } from "../../modules/IPost";
 import React, { useState } from "react";
 import { NavbarFilter } from "../index";
-import "./Navbar.css";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-export const Navbar: React.FC = () => {
+type NavbarProps = {
+  filterResult: IPost[] | null | undefined;
+  handleFilterNavbar: (value: string) => void;
+  filterNavbar: string | undefined;
+};
+
+export const Navbar: React.FC<NavbarProps> = ({ filterResult, handleFilterNavbar, filterNavbar }) => {
   const [isOpenFilter, setIsOpenFilter] = useState(false);
 
   return (
@@ -14,7 +21,10 @@ export const Navbar: React.FC = () => {
       <div className="flex justify-between w-5/12 items-center">
         <div className="flex justify-between items-center">
           <img src={VectorImg} alt="img" className="navbar-img mr-4" />{" "}
-          <span className="text-white text-lg ml-2">6 Suggestions</span>
+          <span className="text-white text-lg ml-2">
+            {filterResult?.length ? filterResult.length : 0}{" "}
+            Suggestions
+          </span>
         </div>
         <div className="flex justify-between relative">
           <span className="mr-1 color-span-text font-thin">Sort by :</span>{" "}
@@ -22,14 +32,14 @@ export const Navbar: React.FC = () => {
             className="text-white ml-1 flex justify-between items-center cursor-pointer"
             onClick={() => setIsOpenFilter(!isOpenFilter)}
           >
-            <span className="mr-2">Most Upvotes</span>{" "}
+            <span className="w-32">{filterNavbar}</span>{" "}
             {isOpenFilter ? (
-              <img src={UpIcon} alt="down" className="down-icon ml-1" />
+              <img src={UpIcon} alt="down" className="down-icon" />
             ) : (
-              <img src={DownIcon} alt="down" className="down-icon ml-1" />
+              <img src={DownIcon} alt="down" className="down-icon" />
             )}
           </span>
-          {isOpenFilter && <NavbarFilter />}
+          {isOpenFilter && <NavbarFilter handleFilterNavbar={handleFilterNavbar} />}
         </div>
       </div>
 
