@@ -38,5 +38,12 @@ export const PostService = createApi({
       }),
       invalidatesTags: ["feedbacks"],
     }),
+    deleteFeedback: build.mutation<IPost, IPost>({
+      query: (feedback) => ({
+        url: `/feedbacks/${feedback.id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["feedbacks"],
+    }),
   }),
 });

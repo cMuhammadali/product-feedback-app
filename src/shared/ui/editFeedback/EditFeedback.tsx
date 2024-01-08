@@ -14,6 +14,7 @@ export const EditFeedback: React.FC = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [editFeedbackPost, {}] = PostService.useEditFeedbackPostMutation();
+  const [deleteFeedback] = PostService.useDeleteFeedbackMutation();
   const {
     data: feedback,
     error,
@@ -23,15 +24,12 @@ export const EditFeedback: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset,
   } = useForm<editFeedbackForm>({
     defaultValues: {},
     resolver: zodResolver(editFeedbackSchema),
   });
 
   const onSubmit = async (formData: editFeedbackForm) => {
-    console.log("formData", formData);
-    
     try {
       const mappedData = {
         id: feedback?.id || 0,
@@ -41,16 +39,23 @@ export const EditFeedback: React.FC = () => {
         comments: feedback?.comments || [],
         ...formData,
       };
-      
+
       await new Promise((resolve) => setTimeout(resolve, 1000));
       await editFeedbackPost({
         id: id,
         feedback: mappedData,
       });
-      
+
       navigate(`/one-feedback/${id}`);
     } catch (error) {
       console.error("Error editing feedback:", error);
+    }
+  };
+
+  const handleDelete = async () => {
+    if (feedback) {
+      await deleteFeedback(feedback);
+      navigate("/");
     }
   };
 
@@ -58,8 +63,6 @@ export const EditFeedback: React.FC = () => {
     return (
       <h1 className="text-xl mt-8 list-title-text text-center">Loading...</h1>
     );
-
-  console.log("feedback", feedback);
 
   return (
     <div className="items-center h-screen mt-4">
@@ -155,8 +158,11 @@ export const EditFeedback: React.FC = () => {
             </Form>
             <div className="flex justify-between mt-4 pb-6">
               <div>
-                <Button className="py-3 px-5 mr-2 bg-delete text-white rounded-xl">
-                  Delete
+                <Button
+                  className="py-3 px-5 mr-2 bg-delete text-white rounded-xl"
+                  onClick={handleDelete}
+                >
+                  {isLoading ? "Loading..." : "Delete"}
                 </Button>
               </div>
               <div>

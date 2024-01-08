@@ -1,7 +1,5 @@
-
-
 export interface IPost {
-  id: number;
+  id: number | string;
   title: string;
   description: string;
   type: string;
@@ -9,5 +7,5 @@ export interface IPost {
   likes: number;
   status: string;
   isLiked: boolean;
-  comments: [];
+  comments: any[];
 }

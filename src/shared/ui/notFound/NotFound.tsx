@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import NotFoundImg from "../../images/NotFound.png";
+import { Link } from "react-router-dom";
 import { Button } from "../index";
 import React from "react";
 

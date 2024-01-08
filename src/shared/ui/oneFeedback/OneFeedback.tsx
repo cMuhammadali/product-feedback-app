@@ -1,9 +1,15 @@
+import {
+  editFeedbackCommentForm,
+  editFeedbackCommentSchema,
+} from "../../schema/Schema";
 import ListUpIconWhite from "../../images/ListUpIconWhite.png";
 import { useNavigate, useParams } from "react-router-dom";
 import { PostService } from "../../services/PostService";
+import { zodResolver } from "@hookform/resolvers/zod";
 import ListUpIon from "../../images/ListUpIcon.png";
 import CommentIcon from "../../images/Comment.png";
 import GoBack from "../../images/GoBack.png";
+import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import { Button, Form } from "../index";
 import "./OneFeedback.css";
@@ -16,12 +22,48 @@ interface Comment {
 export const OneFeedback: React.FC = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const [isHover, setIsHover] = useState(false);
+
+  const [editFeedbackPost, {}] = PostService.useEditFeedbackPostMutation();
   const {
     data: feedback,
     error,
     isLoading,
   } = PostService.useOneFeedbackQuery(Number(id));
-  const [isHover, setIsHover] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<editFeedbackCommentForm>({
+    defaultValues: {},
+    resolver: zodResolver(editFeedbackCommentSchema),
+  });
+
+  const handleAddComment = async (newComment: editFeedbackCommentForm) => {
+    const mappedData = {
+      id: feedback?.id || 0,
+      commentsCount: feedback?.comments.length || 0,
+      likes: feedback?.likes || 0,
+      isLiked: feedback?.isLiked || false,
+      comments: [
+        ...(feedback?.comments || []),
+        { id: Number(id), title: newComment.comment },
+      ],
+      title: feedback?.title || "",
+      description: feedback?.description || "",
+      type: feedback?.type || "",
+      status: feedback?.status || "",
+    };
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await editFeedbackPost({
+      id: id,
+      feedback: mappedData,
+    });
+    reset();
+  };
 
   if (isLoading)
     return (
@@ -100,7 +142,8 @@ export const OneFeedback: React.FC = () => {
         <div className="mt-4 bg-white p-6 rounded-xl">
           <div>
             <h1 className="text-xl list-title-text font-bold mb-4">
-              {feedback?.comments?.length ? feedback?.comments.length : 0} Comments
+              {feedback?.comments?.length ? feedback?.comments.length : 0}{" "}
+              {feedback?.comments.length === 1 ? "Comment" : "Comments"}
             </h1>
           </div>
 
@@ -123,18 +166,24 @@ export const OneFeedback: React.FC = () => {
           </div>
 
           <div className="mt-2 mb-2">
-            <Form>
-              <textarea
-                className="input-add mt-3 w-full rounded-xl text-titleColor indent-1 mb-4 max-h-20 min-h-20 py-4 px-4"
-                placeholder="Type your comment here"
-              />
-            </Form>
+            <form onSubmit={handleSubmit(handleAddComment)}>
+              <Form>
+                <textarea
+                  className="input-add mt-3 w-full rounded-xl text-titleColor indent-1 mb-4 max-h-20 min-h-20 py-4 px-4"
+                  placeholder="Type your comment here"
+                  {...register("comment")}
+                />
+              </Form>
+            </form>
           </div>
 
           <div className="mt-2 flex justify-between items-center">
             <h3 className="text-bottom text-sm">250 Characters left</h3>
-            <Button className="one-feedback-post-comment text-white rounded-xl px-5 py-3">
-              Post Comment
+            <Button
+              className="one-feedback-post-comment text-white rounded-xl px-5 py-3"
+              onClick={handleSubmit(handleAddComment)}
+            >
+              {isSubmitting ? "Loading..." : "Post Comment"}
             </Button>
           </div>
         </div>

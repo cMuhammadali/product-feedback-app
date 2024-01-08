@@ -82,14 +82,23 @@
     },
     {
       "id": 7,
-      "commentsCount": 0,
+      "commentsCount": 1,
       "likes": 0,
       "status": "planned",
       "isLiked": false,
-      "comments": [],
+      "comments": [
+        {
+          "id": 7,
+          "title": "TEST COMMENT 1"
+        },
+        {
+          "id": 7,
+          "title": "TEST COMMENT 2"
+        }
+      ],
       "title": "TEST 1",
-      "type": "UI",
-      "description": "BUG BU"
+      "type": "Bug",
+      "description": "TEST 1"
     }
   ]
 }
