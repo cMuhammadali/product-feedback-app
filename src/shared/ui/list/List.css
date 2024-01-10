@@ -1,0 +1,47 @@
+.list-up-icon {
+  width: 14px;
+  height: 10px;
+}
+.list-up-button {
+  background: #f2f4fe;
+  transition: all 0.5s;
+  color: #3a4374;
+}
+.list-up-button:hover {
+  background: #cfd7ff;
+  transition: all 0.5s;
+}
+.list-title-text {
+  color: #3a4374;
+}
+.list-p-text {
+  color: #647196;
+}
+.list-span-text-last {
+  color: #4661e6;
+  background: #f2f4ff;
+}
+.comment-icon {
+  width: 30px;
+}
+.list-box {
+  width: 100%;
+  overflow-y: scroll;
+  height: 80vh;
+}
+.list-box::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 7px;
+}
+.list-box::-webkit-scrollbar-thumb {
+  background-color: #f2f4ff;
+  border-radius: 7px;
+}
+.feedback-shadow {
+  transition: all 0.5s;
+}
+.feedback-shadow:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transition: all 0.5s;
+}

@@ -1,0 +1,47 @@
+.add-feedback-card {
+  height: 600px;
+}
+.go-back-icon {
+  width: 8px;
+  height: 14px;
+}
+.go-back-text {
+  color: #647196;
+}
+.circle-add-product {
+  background: radial-gradient(
+    farthest-corner at 20px 130px,
+    #28a7ed 30%,
+    #e84d70 100%
+  );
+  left: 35%;
+}
+.input-add {
+  background: #f7f8fd;
+}
+.text-titleColor {
+  color: #3a4374;
+}
+.text-p-color-add {
+  color: #647196;
+}
+.input-add:focus {
+  outline-color: #3a4374;
+}
+.bg-cancel {
+  background: #3a4374;
+}
+.bg-add{
+    background: #AD1FEA;
+}
+.circle-add-feedback{
+  width: 60px;
+}
+.add-plus-add-feedback{
+ width: 20px; 
+}
+.input-add-error{
+  background: #f7f8fd;
+  border: 2px solid red;
+  outline: none;
+}
