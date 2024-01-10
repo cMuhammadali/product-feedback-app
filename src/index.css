@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    font-family: Jost;
+}
+
+body{
+    background: #F7F8FD;
+}
+
+@font-face {
+    font-family: Jost;
+    src: url('./shared/fonts/Jost-Medium.ttf');
+}

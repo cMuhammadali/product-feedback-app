@@ -1,0 +1,42 @@
+.bg-navbar {
+  background: #373f68;
+}
+.navbar-img {
+  width: 40px;
+}
+.add-feedback {
+  background: #ad1fea;
+  transition: all 0.5s;
+}
+.add-feedback:hover {
+  background: #f49f85;
+  transition: all 0.5s;
+}
+.color-span-text {
+  color: #f2f4fe;
+}
+.down-icon {
+  width: 14px;
+  height: 10px;
+}
+.filter-border {
+  color: #647196;
+  transition: all 0.5s;
+  border-bottom: 1px solid #3a43747d;
+}
+.filter-border:hover {
+  color: #ad1fea;
+  transition: all 0.5s;
+}
+.filter-text {
+  color: #647196;
+  transition: all 0.5s;
+}
+.filter-text:hover {
+  color: #ad1fea;
+  transition: all 0.5s;
+}
+.done-icon{
+    width: 14px;
+    height: 12px;
+}
