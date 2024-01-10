@@ -40,3 +40,8 @@
 .add-plus-add-feedback{
  width: 20px; 
 }
+.input-add-error{
+  background: #f7f8fd;
+  border: 2px solid red;
+  outline: none;
+}

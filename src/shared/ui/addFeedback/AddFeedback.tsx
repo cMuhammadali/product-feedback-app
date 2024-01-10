@@ -1,8 +1,8 @@
 import { addProductSchema, addProdutForm } from "../../schema/Schema";
 import { PostService } from "../../services/PostService";
 import { zodResolver } from "@hookform/resolvers/zod";
-import CircleAdd from '../../images/CircleAdd.png';
-import AddPlus from '../../images/addPlus.png';
+import CircleAdd from "../../images/CircleAdd.png";
+import AddPlus from "../../images/addPlus.png";
 import { useNavigate } from "react-router-dom";
 import { Button, Form, Label } from "../index";
 import GoBack from "../../images/GoBack.png";
@@ -54,14 +54,20 @@ export const AddFeedback: React.FC = () => {
         </span>
       </div>
       <div className="flex justify-center mt-12">
-        <div className="absolute top-14 rounded-full pb-4 px-6 pt-3">
-            
-        </div>
+        <div className="absolute top-14 rounded-full pb-4 px-6 pt-3"></div>
         <div className="absolute top-14 rounded-full w-1/4">
-          <img src={CircleAdd} alt="Circle" className="circle-add-feedback absolute" />
-          <img src={AddPlus} alt="Add plus" className="add-plus-add-feedback absolute top-5 left-5" />
+          <img
+            src={CircleAdd}
+            alt="Circle"
+            className="circle-add-feedback absolute"
+          />
+          <img
+            src={AddPlus}
+            alt="Add plus"
+            className="add-plus-add-feedback absolute top-5 left-5"
+          />
         </div>
-        <div className="w-4/12 bg-white add-feedback-card rounded-xl px-6 py-4">
+        <div className="w-4/12 bg-white add-feedback-card rounded-xl px-6 py-4 h-4/5">
           <h1 className="text-titleColor text-2xl mt-8">Create New Feedback</h1>
           <form className="mt-6" onSubmit={handleSubmit(onSubmit)}>
             <Form>
@@ -72,9 +78,14 @@ export const AddFeedback: React.FC = () => {
                 labelClassNameP="text-p-color-add text-sm"
               />
               <input
-                className="input-add mt-3 w-full h-12 rounded-xl text-titleColor indent-1 mb-4"
+                className={
+                  errors.title?.message?.length
+                    ? "input-add-error mt-3 w-full h-12 rounded-xl text-titleColor indent-1"
+                    : "input-add mt-3 w-full h-12 rounded-xl text-titleColor indent-1"
+                }
                 {...register("title")}
               />
+              <h3 className="mb-4 text-red-600 mt-1">{errors.title?.message || null}</h3>
             </Form>
             <Form>
               <Label
@@ -103,9 +114,14 @@ export const AddFeedback: React.FC = () => {
                 labelClassNameP="text-p-color-add text-sm"
               />
               <textarea
-                className="input-add mt-3 w-full rounded-xl text-titleColor indent-1 mb-4 max-h-20 min-h-20"
+                className={
+                  errors.description?.message?.length
+                    ? "input-add-error mt-3 w-full rounded-xl text-titleColor indent-1 max-h-20 min-h-20"
+                    : "input-add mt-3 w-full rounded-xl text-titleColor indent-1 max-h-20 min-h-20"
+                }
                 {...register("description")}
               />
+              <h3 className="mb-4 text-red-600">{errors.description?.message || null}</h3>
             </Form>
             <div className="flex justify-end mt-4">
               <Button

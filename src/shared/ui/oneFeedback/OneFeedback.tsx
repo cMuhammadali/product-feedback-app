@@ -1,7 +1,3 @@
-import {
-  editFeedbackCommentForm,
-  editFeedbackCommentSchema,
-} from "../../schema/Schema";
 import ListUpIconWhite from "../../images/ListUpIconWhite.png";
 import { useNavigate, useParams } from "react-router-dom";
 import { PostService } from "../../services/PostService";
@@ -12,6 +8,10 @@ import GoBack from "../../images/GoBack.png";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import { Button, Form } from "../index";
+import {
+  editFeedbackCommentForm,
+  editFeedbackCommentSchema,
+} from "../../schema/Schema";
 import "./OneFeedback.css";
 
 interface Comment {
@@ -170,10 +170,15 @@ export const OneFeedback: React.FC = () => {
             <form onSubmit={handleSubmit(handleAddComment)}>
               <Form>
                 <textarea
-                  className="input-add mt-3 w-full rounded-xl text-titleColor indent-1 mb-4 max-h-20 min-h-20 py-4 px-4"
+                  className={
+                    errors.comment?.message?.length
+                      ? "input-add-error mt-3 w-full rounded-xl text-titleColor indent-1 max-h-20 min-h-20 py-4 px-4"
+                      : "input-add mt-3 w-full rounded-xl text-titleColor indent-1 max-h-20 min-h-20 py-4 px-4"
+                  }
                   placeholder="Type your comment here"
                   {...register("comment")}
                 />
+                <h3 className="mb-4 text-red-600">{errors.comment?.message || null}</h3>
               </Form>
             </form>
           </div>

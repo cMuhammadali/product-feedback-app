@@ -102,10 +102,15 @@ export const EditFeedback: React.FC = () => {
                 labelClassNameP="text-p-color-add text-sm"
               />
               <input
-                className="input-add mt-3 w-full h-12 rounded-xl text-titleColor indent-1 mb-4"
+                className={
+                  errors.title?.message?.length
+                    ? "input-add-error mt-3 w-full h-12 rounded-xl text-titleColor indent-1"
+                    : "input-add mt-3 w-full h-12 rounded-xl text-titleColor indent-1"
+                }
                 {...register("title")}
                 defaultValue={feedback?.title}
               />
+              <h3 className="mb-4 text-red-600 mt-1">{errors.title?.message || null}</h3>
             </Form>
             <Form>
               <Label
@@ -151,10 +156,15 @@ export const EditFeedback: React.FC = () => {
                 labelClassNameP="text-p-color-add text-sm"
               />
               <textarea
-                className="input-add mt-3 w-full rounded-xl text-titleColor indent-1 mb-4 max-h-20 min-h-20"
+                className={
+                  errors.description?.message?.length
+                    ? "input-add-error mt-3 w-full rounded-xl text-titleColor indent-1 max-h-20 min-h-20"
+                    : "input-add mt-3 w-full rounded-xl text-titleColor indent-1 max-h-20 min-h-20"
+                }
                 {...register("description")}
                 defaultValue={feedback?.description}
               />
+              <h3 className="mb-4 text-red-600">{errors.description?.message || null}</h3>
             </Form>
             <div className="flex justify-between mt-4 pb-6">
               <div>

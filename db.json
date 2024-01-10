@@ -6,7 +6,7 @@
       "description": "Easier to search for solutions based on a specific stack.",
       "type": "Enhancement",
       "commentsCount": 2,
-      "likes": 125,
+      "likes": 127,
       "status": "planned",
       "isLiked": false,
       "comments": [
@@ -22,7 +22,7 @@
       "description": "It would help people with light sensitivities and who prefer dark mode.",
       "type": "Feature",
       "commentsCount": 4,
-      "likes": 104,
+      "likes": 105,
       "status": "planned",
       "isLiked": true,
       "comments": [
@@ -75,7 +75,7 @@
       "description": "Challenge preview images are missing when you apply a filter.",
       "type": "Bug",
       "commentsCount": 0,
-      "likes": 13,
+      "likes": 25,
       "status": "planned",
       "isLiked": false,
       "comments": []
