@@ -6,7 +6,7 @@
       "description": "Easier to search for solutions based on a specific stack.",
       "type": "Enhancement",
       "commentsCount": 2,
-      "likes": 112,
+      "likes": 125,
       "status": "planned",
       "isLiked": false,
       "comments": [
@@ -22,7 +22,7 @@
       "description": "It would help people with light sensitivities and who prefer dark mode.",
       "type": "Feature",
       "commentsCount": 4,
-      "likes": 99,
+      "likes": 104,
       "status": "planned",
       "isLiked": true,
       "comments": [
@@ -37,7 +37,7 @@
       "description": "Challenge-specific Q&A would make for easy reference.",
       "type": "Feature",
       "commentsCount": 1,
-      "likes": 65,
+      "likes": 73,
       "status": "planned",
       "isLiked": true,
       "comments": [
@@ -53,7 +53,7 @@
       "description": "Images and screencasts can enhance comments on solutions.",
       "type": "Enhancement",
       "commentsCount": 2,
-      "likes": 51,
+      "likes": 56,
       "status": "planned",
       "isLiked": false,
       "comments": []
@@ -64,7 +64,7 @@
       "description": "Stay updated on comments and solutions other people post.",
       "type": "Feature",
       "commentsCount": 3,
-      "likes": 42,
+      "likes": 47,
       "status": "planned",
       "isLiked": false,
       "comments": []
@@ -75,7 +75,7 @@
       "description": "Challenge preview images are missing when you apply a filter.",
       "type": "Bug",
       "commentsCount": 0,
-      "likes": 3,
+      "likes": 13,
       "status": "planned",
       "isLiked": false,
       "comments": []
@@ -83,7 +83,7 @@
     {
       "id": 7,
       "commentsCount": 1,
-      "likes": 0,
+      "likes": 8,
       "status": "planned",
       "isLiked": false,
       "comments": [

@@ -8,9 +8,8 @@
   color: #3a4374;
 }
 .list-up-button:hover {
-  background: #4661e6;
+  background: #cfd7ff;
   transition: all 0.5s;
-  color: #fff;
 }
 .list-title-text {
   color: #3a4374;
@@ -42,6 +41,7 @@
   transition: all 0.5s;
 }
 .feedback-shadow:hover {
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
   transition: all 0.5s;
 }

@@ -44,7 +44,6 @@ export const OneFeedback: React.FC = () => {
   const handleAddComment = async (newComment: editFeedbackCommentForm) => {
     const mappedData = {
       id: feedback?.id || 0,
-      commentsCount: feedback?.comments.length || 0,
       likes: feedback?.likes || 0,
       isLiked: feedback?.isLiked || false,
       comments: [
@@ -142,8 +141,10 @@ export const OneFeedback: React.FC = () => {
         <div className="mt-4 bg-white p-6 rounded-xl">
           <div>
             <h1 className="text-xl list-title-text font-bold mb-4">
-              {feedback?.comments?.length ? feedback?.comments.length : 0}{" "}
-              {feedback?.comments.length === 1 ? "Comment" : "Comments"}
+              {feedback?.comments?.length === 0 ||
+              feedback?.comments?.length === 1
+                ? feedback?.comments?.length + " Comment"
+                : feedback?.comments?.length + " Comments"}
             </h1>
           </div>
 

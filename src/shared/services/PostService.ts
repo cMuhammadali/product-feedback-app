@@ -30,7 +30,7 @@ export const PostService = createApi({
         url: `/feedbacks/${id}`,
       }),
     }),
-    editFeedbackPost: build.mutation<IPost,{ id?: number | string; feedback: IPost }>({
+    editFeedbackPost: build.mutation<IPost,{ id?: number | string; feedback?: IPost | {} }>({
       query: ({ id, feedback }) => ({
         url: `/feedbacks/${id}`,
         method: "PATCH",

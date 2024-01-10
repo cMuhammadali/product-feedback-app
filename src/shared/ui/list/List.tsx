@@ -1,10 +1,10 @@
-import ListUpIconWhite from "../../images/ListUpIconWhite.png";
+import { PostService } from "../../services/PostService";
 import ListUpIon from "../../images/ListUpIcon.png";
 import CommentIcon from "../../images/Comment.png";
 import { IPost } from "../../modules/IPost";
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { NotFound } from "../index";
+import React from "react";
 import "./List.css";
 
 type ListProps = {
@@ -13,13 +13,35 @@ type ListProps = {
 };
 
 export const List: React.FC<ListProps> = ({ isLoading, filterResult }) => {
-  const [isHover, setIsHover] = useState(false);
+  const [editFeedbackPost, {}] = PostService.useEditFeedbackPostMutation();
 
   if (isLoading)
     return (
       <h1 className="text-xl mt-8 list-title-text text-center">Loading...</h1>
     );
 
+  const handleCount = async (value: string | number | undefined) => {
+    if (value) {
+      const feedbackItem = filterResult?.find((item) => item.id === value);
+      if (feedbackItem) {
+        const mappedData = {
+          id: feedbackItem.id || 0,
+          likes: (feedbackItem.likes || 0) + 1,
+          isLiked: feedbackItem.isLiked || false,
+          comments: feedbackItem.comments || [],
+          title: feedbackItem.title || "",
+          description: feedbackItem.description || "",
+          type: feedbackItem.type || "",
+          status: feedbackItem.status || "",
+        };
+
+        await editFeedbackPost({
+          id: value,
+          feedback: mappedData,
+        });
+      }
+    }
+  };
   return (
     <div className="list-box mt-4">
       {filterResult?.length ? (
@@ -29,26 +51,21 @@ export const List: React.FC<ListProps> = ({ isLoading, filterResult }) => {
               <div className="flex justify-between bg-white p-6 rounded-xl">
                 <div className="w-4/5 flex justify-left items-center">
                   <div
-                    className="text-center rounded-xl list-up-button cursor-pointer px-3 py-2 items-center mr-6"
-                    onMouseOver={() => setIsHover(true)}
-                    onMouseOut={() => setIsHover(false)}
+                    className="rounded-xl list-up-button cursor-pointer px-3 py-2 items-center mr-6"
+                    onClick={() => handleCount(item.id)}
                   >
-                    {isHover ? (
-                      <img
-                        src={ListUpIconWhite}
-                        alt="UpIcon"
-                        className="list-up-icon text-center mb-1 ml-1 items-center"
-                      />
-                    ) : (
+                    <div className="flex justify-center">
                       <img
                         src={ListUpIon}
                         alt="UpIcon"
-                        className="list-up-icon text-center mb-1 ml-1 items-center"
+                        className="list-up-icon mb-1 items-center"
                       />
-                    )}
-                    <span className="text-center nt-2 list-span-text items-center">
-                      {item?.likes}
-                    </span>
+                    </div>
+                    <div>
+                      <span className="nt-2 list-span-text items-center">
+                        {item?.likes}
+                      </span>
+                    </div>
                   </div>
                   <Link
                     to={`/one-feedback/${item?.id}`}
@@ -89,4 +106,3 @@ export const List: React.FC<ListProps> = ({ isLoading, filterResult }) => {
     </div>
   );
 };
-

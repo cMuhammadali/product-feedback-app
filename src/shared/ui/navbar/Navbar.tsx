@@ -13,7 +13,11 @@ type NavbarProps = {
   filterNavbar: string | undefined;
 };
 
-export const Navbar: React.FC<NavbarProps> = ({ filterResult, handleFilterNavbar, filterNavbar }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  filterResult,
+  handleFilterNavbar,
+  filterNavbar,
+}) => {
   const [isOpenFilter, setIsOpenFilter] = useState(false);
 
   return (
@@ -22,8 +26,9 @@ export const Navbar: React.FC<NavbarProps> = ({ filterResult, handleFilterNavbar
         <div className="flex justify-between items-center">
           <img src={VectorImg} alt="img" className="navbar-img mr-4" />{" "}
           <span className="text-white text-lg ml-2">
-            {filterResult?.length ? filterResult.length : 0}{" "}
-            Suggestions
+            {filterResult?.length === 0 || filterResult?.length === 1
+              ? filterResult?.length + " Suggestion"
+              : filterResult?.length + " Suggestions"}
           </span>
         </div>
         <div className="flex justify-between relative">
@@ -39,7 +44,9 @@ export const Navbar: React.FC<NavbarProps> = ({ filterResult, handleFilterNavbar
               <img src={DownIcon} alt="down" className="down-icon" />
             )}
           </span>
-          {isOpenFilter && <NavbarFilter handleFilterNavbar={handleFilterNavbar} />}
+          {isOpenFilter && (
+            <NavbarFilter handleFilterNavbar={handleFilterNavbar} />
+          )}
         </div>
       </div>
 
