@@ -75,7 +75,7 @@ export const OneFeedback: React.FC = () => {
         <div className="flex justify-between">
           <div
             className="flex justify-between w-24 items-center cursor-pointer"
-            onClick={() => navigate(-1)}
+            onClick={() => navigate('/')}
           >
             <img src={GoBack} alt="Go back" className="go-back-icon" />
             <p className="go-back-text ml-2">Go Back</p>
