@@ -1,12 +1,13 @@
-import { editFeedbackForm, editFeedbackSchema } from "../../schema/Schema";
+import { editFeedbackForm, editFeedbackSchema } from "@schema/Schema";
 import { useNavigate, useParams } from "react-router-dom";
-import { PostService } from "../../services/PostService";
 import { zodResolver } from "@hookform/resolvers/zod";
-import CircleAdd from "../../images/CircleAdd.png";
-import { Button, Form, Label } from "../index";
-import EditPen from "../../images/editPen.png";
-import GoBack from "../../images/GoBack.png";
+import { PostService } from "@services/PostService";
+import CircleAdd from "@images/CircleAdd.png";
+import EditPen from "@images/editPen.png";
+import { Button, Label } from "@ui/index";
 import { useForm } from "react-hook-form";
+import { Form } from '@components/index';
+import GoBack from "@images/GoBack.png";
 import "./EditFeedback.css";
 import React from "react";
 

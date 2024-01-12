@@ -1,5 +1,15 @@
 {
   "compilerOptions": {
+    "baseUrl" : "./src",
+    "paths": {
+      "@ui/*": ["./shared/ui/*"],
+      "@pages/*": ["./pages/*"],
+      "@modules/*": ["./modules/*"],
+      "@services/*": ["./services/*"],
+      "@components/*": ["./components/*"],
+      "@schema/*": ["./schema/*"],
+      "@images/*": ["./shared/images/*"],
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

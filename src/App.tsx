@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import {
+  Home,
   Main,
   AddFeedback,
-  Home,
-  OneFeedback,
   EditFeedback,
-} from "./shared/ui/index";
+  OneFeedback,
+} from "@pages/index";
 import "./App.css";
 
 function App() {

@@ -1,18 +1,19 @@
 import ListUpIconWhite from "../../images/ListUpIconWhite.png";
 import { useNavigate, useParams } from "react-router-dom";
-import { PostService } from "../../services/PostService";
 import { zodResolver } from "@hookform/resolvers/zod";
-import ListUpIon from "../../images/ListUpIcon.png";
-import CommentIcon from "../../images/Comment.png";
-import GoBack from "../../images/GoBack.png";
+import { PostService } from "@services/PostService";
+import ListUpIon from "@images/ListUpIcon.png";
+import CommentIcon from "@images/Comment.png";
 import { useForm } from "react-hook-form";
+import { Form } from '@components/index';
+import GoBack from "@images/GoBack.png";
 import React, { useState } from "react";
-import { Button, Form } from "../index";
+import { Button } from "@ui/index";
+import "./OneFeedback.css";
 import {
   editFeedbackCommentForm,
   editFeedbackCommentSchema,
-} from "../../schema/Schema";
-import "./OneFeedback.css";
+} from "@schema/Schema";
 
 interface Comment {
   id: number;

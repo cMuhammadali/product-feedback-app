@@ -1,13 +1,14 @@
-import { addProductSchema, addProdutForm } from "../../schema/Schema";
-import { PostService } from "../../services/PostService";
+import { addProductSchema, addProdutForm } from "@schema/Schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import CircleAdd from "../../images/CircleAdd.png";
-import AddPlus from "../../images/addPlus.png";
+import { PostService } from "@services/PostService";
 import { useNavigate } from "react-router-dom";
-import { Button, Form, Label } from "../index";
-import GoBack from "../../images/GoBack.png";
-import { IPost } from "../../modules/IPost";
+import CircleAdd from "@images/CircleAdd.png";
+import { Button, Label } from "@ui/index";
 import { useForm } from "react-hook-form";
+import AddPlus from "@images/addPlus.png";
+import { Form } from "@components/index";
+import GoBack from "@images/GoBack.png";
+import { IPost } from "@modules/IPost";
 import "./AddFeedback.css";
 import React from "react";
 

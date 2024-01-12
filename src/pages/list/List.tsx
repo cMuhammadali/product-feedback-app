@@ -1,9 +1,9 @@
-import { PostService } from "../../services/PostService";
-import ListUpIon from "../../images/ListUpIcon.png";
-import CommentIcon from "../../images/Comment.png";
-import { IPost } from "../../modules/IPost";
+import { PostService } from "@services/PostService";
+import ListUpIon from "@images/ListUpIcon.png";
+import CommentIcon from "@images/Comment.png";
+import { NotFound } from "@pages/index";
 import { Link } from "react-router-dom";
-import { NotFound } from "../index";
+import { IPost } from "@modules/IPost";
 import React from "react";
 import "./List.css";
 

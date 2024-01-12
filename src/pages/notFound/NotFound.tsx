@@ -1,6 +1,6 @@
-import NotFoundImg from "../../images/NotFound.png";
+import NotFoundImg from "@images/NotFound.png";
 import { Link } from "react-router-dom";
-import { Button } from "../index";
+import { Button } from "@ui/index";
 import React from "react";
 
 export const NotFound: React.FC = () => {

@@ -1,10 +1,10 @@
-import DownIcon from "../../images/DownIcon.png";
-import VectorImg from "../../images/Vector.png";
-import UpIcon from "../../images/UpIcon.png";
-import { IPost } from "../../modules/IPost";
-import React, { useState } from "react";
-import { NavbarFilter } from "../index";
+import { NavbarFilter } from "@components/index";
+import DownIcon from "@images/DownIcon.png";
+import VectorImg from "@images/Vector.png";
+import UpIcon from "@images/UpIcon.png";
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { IPost } from "@modules/IPost";
 import "./Navbar.css";
 
 type NavbarProps = {

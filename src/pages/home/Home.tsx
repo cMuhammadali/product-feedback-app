@@ -1,7 +1,8 @@
-import { PostService } from "../../services/PostService";
-import { Leftbar, List, Navbar } from "../index";
-import { IPost } from "../../modules/IPost";
+import { PostService } from "@services/PostService";
+import { Leftbar, Navbar } from '@components/index';
 import React, { useEffect, useState } from "react";
+import { IPost } from "@modules/IPost";
+import { List } from "@pages/index";
 
 export const Home: React.FC = () => {
   const {
